@@ -65,6 +65,8 @@ requires 'Crypt::Rijndael';
 requires 'Crypt::Random::Source';
 requires 'MIME::Base64::URLSafe';
 
+requires 'ElasticSearch';
+
 #catalyst;
 
 install_script glob('script/*.pl');
