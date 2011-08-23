@@ -379,13 +379,13 @@ sub simple_search {
     my ($self, $c, $o) = @_;
 
     croak unless $o->{mailbox};
-    croak unless $o->{searchfor};
+    croak unless $o->{filter};
     $self->select($c, { mailbox => $o->{mailbox} });
 
     my @search = (
         'OR',
-        'SUBJECT', $c->stash->{imapclient}->Quote($o->{searchfor}),
-        'FROM', $c->stash->{imapclient}->Quote($o->{searchfor}),
+        'SUBJECT', $c->stash->{imapclient}->Quote($o->{filter}),
+        'FROM', $c->stash->{imapclient}->Quote($o->{filter}),
     );
 
     my @uids;
